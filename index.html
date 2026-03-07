@@ -178,7 +178,33 @@
             grid-template-columns: 1fr 1fr;
             gap: 20px;
         }
+        /* Important Links Section */
+        .links-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
 
+        .profile-link {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: var(--sidebar-bg);
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+            transition: background-color 0.3s, transform 0.2s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .profile-link:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+            color: #ffffff;
+        }
+        
         /* Responsive Design */
         @media (max-width: 900px) {
             .sidebar {
@@ -219,6 +245,7 @@
             <li><a href="#publications">Publications & Patents</a></li>
             <li><a href="#teaching">Teaching</a></li>
             <li><a href="#skills">Skills & Interests</a></li>
+            <li><a href="#links">Important Links</a></li>
         </ul>
     </nav>
 
@@ -384,7 +411,7 @@
             <div class="grid-2">
                 <div>
                     <h3>Technical Skills</h3>
-                    <p><strong>Software:</strong> Matlab, Maple, Python, Julia, Oscill8, AUTOCAD, LABVIEW, Simulink.</p>
+                    <p><strong>Software:</strong> Matlab, Maple, Python, Julia, Oscill8, AUTOCAD, HTML, LABVIEW, Simulink.</p>
                     <p><strong>Hardware:</strong> NI DAQ, Vibration Shaker, Amplifier, Signal Generator, Laser displacement sensor, Accelerometers.</p>
                     <p><strong>Graphics:</strong> Origin Pro, Grapher, Matplotlib, Scimago Graphica, Inkscape.</p>
                 </div>
@@ -395,7 +422,17 @@
                 </div>
             </div>
         </section>
-
+            <section id="links">
+            <h1 class="section-title">Important Links</h1>
+            <p>Connect with me or explore my full research profile on the following platforms:</p>
+            
+            <div class="links-container">
+                <a href="https://scholar.google.com/citations?user=N3Nd62QAAAAJ&hl=en" class="profile-link" target="_blank">Google Scholar</a>
+                <a href="https://www.researchgate.net/profile/Pradyumna-Sahoo-2?ev=hdr_xprf" class="profile-link" target="_blank">ResearchGate</a>
+                <a href="https://orcid.org/my-orcid?orcid=0000-0002-8703-5972" class="profile-link" target="_blank">ORCID</a>
+                <a href="https://www.linkedin.com/in/dr-pradyumna-kumar-sahoo-ph-d-275216146/?skipRedirect=true" class="profile-link" target="_blank">LinkedIn</a>
+            </div>
+        </section>
     </div>
 
 </body>
