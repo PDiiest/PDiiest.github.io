@@ -204,6 +204,59 @@
             transform: translateY(-3px);
             color: #ffffff;
         }
+        /* Research Gallery Section */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .gallery-card {
+            background: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            border: 1px solid #eaeaea;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .gallery-media {
+            width: 100%;
+            height: 200px; /* Fixed height for uniformity */
+            object-fit: cover;
+            background-color: #e9ecef; /* Placeholder color */
+            display: block;
+        }
+
+        /* Styling for video elements specifically */
+        video.gallery-media {
+            object-fit: contain; 
+            background-color: #000;
+        }
+
+        .gallery-content {
+            padding: 20px;
+        }
+
+        .gallery-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1em;
+            color: var(--sidebar-bg);
+            margin: 0 0 10px 0;
+            font-weight: 600;
+        }
+
+        .gallery-desc {
+            font-size: 0.9em;
+            color: var(--text-muted);
+            line-height: 1.5;
+            margin: 0;
+        }
         
         /* Responsive Design */
         @media (max-width: 900px) {
@@ -241,6 +294,7 @@
         <ul class="nav-links">
             <li><a href="#about">About & Contact</a></li>
             <li><a href="#research">Research</a></li>
+            <li><a href="#gallery">Research Galéria</a></li>
             <li><a href="#education">Education</a></li>
             <li><a href="#publications">Publications & Patents</a></li>
             <li><a href="#teaching">Teaching</a></li>
@@ -322,7 +376,43 @@
                 </div>
             </div>
         </section>
+        
+<section id="gallery">
+            <h1 class="section-title">Research Gallery</h1>
+            <p>A visual overview of my experimental setups, numerical simulations, and research phenomena.</p>
+            
+            <div class="gallery-grid">
+                
+                <div class="gallery-card">
+                    <img src="https://via.placeholder.com/600x400?text=Sloshing+Experiment+Photo" alt="Fluid Sloshing Setup" class="gallery-media">
+                    <div class="gallery-content">
+                        <h3 class="gallery-title">Energy Harvesting via Sloshing</h3>
+                        <p class="gallery-desc">Experimental setup demonstrating broadened energy harvesting bandwidth through fluid-sloshing-augmented dynamics of a parametrically excited cantilever beam[cite: 86].</p>
+                    </div>
+                </div>
 
+                <div class="gallery-card">
+                    <video controls class="gallery-media">
+                        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="gallery-content">
+                        <h3 class="gallery-title">Control-Based Continuation</h3>
+                        <p class="gallery-desc">Real-time tracking of complex bifurcations using Control-Based Continuation (CBC) integrated with local system identification techniques[cite: 74, 75].</p>
+                    </div>
+                </div>
+
+                <div class="gallery-card">
+                    <img src="https://via.placeholder.com/600x400?text=Disc+Brake+Model" alt="Disc Brake Vibration" class="gallery-media">
+                    <div class="gallery-content">
+                        <h3 class="gallery-title">Friction-Induced Vibration</h3>
+                        <p class="gallery-desc">Two-degree-of-freedom beam model detailing parametric base excitation influenced by Stribeck and Mode-coupling instabilities in automotive disc brakes[cite: 94, 95].</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        
         <section id="education">
             <h1 class="section-title">Education</h1>
 
