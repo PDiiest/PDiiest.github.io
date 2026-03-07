@@ -3,223 +3,397 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Pradyumna Kumar Sahoo | Academic Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <title>Dr. Pradyumna Kumar Sahoo | Research & Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #1a365d; /* Deep Navy */
-            --accent-color: #d69e2e; /* Professional Gold */
-            --bg-color: #f4f7f6;
-            --text-color: #333333;
-            --card-bg: #ffffff;
+            --sidebar-bg: #1e3d59;      /* Deep Teal */
+            --sidebar-text: #f5f0e1;    /* Off white */
+            --accent-color: #ff6e40;    /* Coral / Orange */
+            --bg-color: #f9f9f9;        /* Light Gray */
+            --text-main: #333333;       /* Dark Gray */
+            --text-muted: #666666;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
-            font-family: 'Roboto', sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--bg-color);
             margin: 0;
-            padding: 0;
+            font-family: 'Open Sans', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            display: flex;
         }
 
-        /* Header / Hero Section */
-        header {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 60px 20px;
-            text-align: center;
-            border-bottom: 5px solid var(--accent-color);
+        /* Sidebar Navigation */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 280px;
+            height: 100vh;
+            background-color: var(--sidebar-bg);
+            color: var(--sidebar-text);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 40px;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+            overflow-y: auto;
         }
 
-        .profile-img {
-            width: 180px;
-            height: 180px;
+        .profile-pic {
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
-            border: 4px solid var(--accent-color);
+            border: 3px solid var(--accent-color);
             object-fit: cover;
             margin-bottom: 20px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
 
-        h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.8em;
-            margin: 0 0 10px 0;
-            letter-spacing: 1px;
+        .sidebar h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.4em;
+            text-align: center;
+            margin: 0 15px 10px 15px;
+            color: #ffffff;
         }
 
-        .subtitle {
-            font-size: 1.2em;
-            font-weight: 300;
-            color: #e2e8f0;
-            margin-bottom: 20px;
+        .sidebar p {
+            font-size: 0.9em;
+            text-align: center;
+            margin: 0 20px 20px 20px;
+            color: #b3c6d6;
         }
 
-        .contact-info a {
-            color: var(--accent-color);
+        .nav-links {
+            list-style: none;
+            padding: 0;
+            width: 100%;
+        }
+
+        .nav-links li {
+            width: 100%;
+        }
+
+        .nav-links a {
+            display: block;
+            padding: 15px 30px;
+            color: var(--sidebar-text);
             text-decoration: none;
-            margin: 0 15px;
-            font-weight: 500;
+            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+            transition: background 0.3s, padding-left 0.3s;
+            border-left: 4px solid transparent;
         }
 
-        .contact-info a:hover {
-            color: white;
-            text-decoration: underline;
+        .nav-links a:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-left: 4px solid var(--accent-color);
+            padding-left: 35px;
+            color: #ffffff;
         }
 
-        /* Main Content Container */
-        .container {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 0 20px;
+        /* Main Content Area */
+        .main-content {
+            margin-left: 280px;
+            padding: 50px 80px;
+            width: calc(100% - 280px);
+            box-sizing: border-box;
         }
 
-        /* Section Styling */
         section {
-            background-color: var(--card-bg);
-            border-radius: 10px;
-            padding: 35px;
-            margin-bottom: 30px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: transform 0.2s ease;
+            margin-bottom: 60px;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.03);
         }
 
-        section:hover {
-            transform: translateY(-2px);
-        }
-
-        h2 {
-            font-family: 'Playfair Display', serif;
-            color: var(--primary-color);
-            border-bottom: 2px solid var(--accent-color);
+        h1.section-title {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--sidebar-bg);
+            font-size: 2em;
+            border-bottom: 3px solid var(--accent-color);
             padding-bottom: 10px;
             margin-top: 0;
+            margin-bottom: 30px;
             display: inline-block;
         }
 
-        /* Entry Layout (Education/Experience) */
-        .entry {
-            display: flex;
+        /* Timeline / Item layout */
+        .item {
             margin-bottom: 25px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid #eee;
         }
 
-        .entry:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 8px;
         }
 
-        .date-column {
-            flex: 0 0 160px;
-            font-weight: 500;
-            color: var(--primary-color);
+        .item-title {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: var(--sidebar-bg);
         }
 
-        .details-column {
-            flex: 1;
+        .item-date {
+            font-weight: 600;
+            color: var(--accent-color);
+            background: #fff0eb;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
         }
 
-        .institution {
-            font-weight: 500;
-            color: #555;
-            font-size: 0.95em;
-        }
-
-        .highlight {
+        .item-subtitle {
             font-style: italic;
-            color: #666;
-            margin-top: 8px;
-            font-size: 0.9em;
-            background: #f8fafc;
-            padding: 10px;
-            border-left: 3px solid var(--accent-color);
+            color: var(--text-muted);
+            margin-bottom: 10px;
         }
 
-        /* Featured Image in Content */
-        .featured-research-img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            margin-top: 15px;
-            border: 1px solid #ddd;
+        .item-desc {
+            line-height: 1.6;
+        }
+
+        ul.pub-list li {
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .highlight-box {
+            background-color: #f0f7f9;
+            border-left: 4px solid var(--sidebar-bg);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 5px 5px 0;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+                padding-bottom: 20px;
+            }
+            .main-content {
+                margin-left: 0;
+                width: 100%;
+                padding: 30px 20px;
+            }
+            .item-header {
+                flex-direction: column;
+            }
+            .item-date {
+                margin-top: 5px;
+                display: inline-block;
+            }
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <img src="https://github.com/PDiiest/PDiiest.github.io/blob/main/photo_6280718706770293613_w.jpg" alt="Dr. Pradyumna Kumar Sahoo" class="profile-img">
+    <nav class="sidebar">
+        <img src="https://via.placeholder.com/150" alt="Dr. Pradyumna Kumar Sahoo" class="profile-pic">
+        <h2>Dr. Pradyumna K. Sahoo</h2>
+        <p>Postdoctoral Researcher<br>Mechanical Engineering</p>
         
-        <h1>Dr. PRADYUMNA KUMAR SAHOO [cite: 1]</h1>
-        <div class="subtitle">Postdoctoral Researcher | Mechanical Engineering & Nonlinear Dynamics</div>
-        
-        <div class="contact-info">
-            <span>Sri Hari Nagar 13th lane, Brahmapur Odisha-760010 [cite: 4]</span><br><br>
-            <a href="mailto:pradyumna1993@yahoo.com">pradyumna1993@yahoo.com [cite: 7]</a> | 
-            <a href="tel:+918240363609">(+91) 8240363609 [cite: 5]</a>
-        </div>
-    </header>
+        <ul class="nav-links">
+            <li><a href="#about">About & Contact</a></li>
+            <li><a href="#research">Research Experience</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#publications">Publications & Patents</a></li>
+            <li><a href="#teaching">Teaching</a></li>
+            <li><a href="#skills">Skills & Interests</a></li>
+        </ul>
+    </nav>
 
-    <div class="container">
-        
-        <section>
-            <h2>Current Projects & Focus</h2>
-            <div class="entry">
-                <div class="details-column">
-                    <strong>Newton International Fellowship Proposal</strong>
-                    <div class="highlight">
-                        Currently developing a comprehensive research proposal focusing on the dynamics and applications of NV center diamond MEMS.
-                    </div>
+    <div class="main-content">
+
+        <section id="about">
+            <h1 class="section-title">About Me</h1>
+            <p>I am a Postdoctoral Researcher specializing in Nonlinear Dynamics, Vibrational Control, and Fluid-Structure Interaction. My work blends complex theoretical modeling with experimental validation to navigate and control bifurcations in engineering systems.</p>
+            
+            <div class="highlight-box">
+                <strong>Current Focus:</strong> Developing a comprehensive research proposal for the Newton International Fellowship on the topic of NV center diamond MEMS, aiming to push the boundaries of sensing and quantum-mechanical applications in micro-electromechanical systems.
+            </div>
+
+            <div class="grid-2" style="margin-top: 30px;">
+                <div>
+                    <strong>Email:</strong> <a href="mailto:pradyumna1993@yahoo.com">pradyumna1993@yahoo.com</a><br>
+                    <strong>Phone:</strong> (+91) 8240363609 / (+36) 30 563 9849<br>
+                    <strong>DOB:</strong> 19th May 1993
+                </div>
+                <div>
+                    <strong>Address:</strong><br>
+                    Sri Hari Nagar 13th lane<br>
+                    Brahmapur, Odisha-760010, India
                 </div>
             </div>
         </section>
 
-        <section>
-            <h2>Post PhD Research Experience [cite: 71]</h2>
-            <div class="entry">
-                <div class="date-column">Feb, 2026 - Present [cite: 68, 69]</div>
-                <div class="details-column">
-                    <strong>Momentum Marie Skłodowska-Curie Actions Post Doc Fellow [cite: 72]</strong><br>
-                    <span class="institution">Budapest University of Technology and Economics, Budapest [cite: 72]</span>
-                    <div class="highlight">Hybrid Framework for Control-Based Continuation with Embedded Local System Identification. [cite: 73]</div>
-                    <img src="https://via.placeholder.com/800x300.png?text=Research+Diagram+or+Lab+Photo" alt="Research Diagram" class="featured-research-img">
+        <section id="research">
+            <h1 class="section-title">Research Experience</h1>
+
+            <div class="item">
+                <div class="item-header">
+                    <div class="item-title">Momentum Marie Skłodowska-Curie Actions Post Doc Fellow</div>
+                    <div class="item-date">Feb 2026 - Present</div>
+                </div>
+                <div class="item-subtitle">Budapest University of Technology and Economics, Budapest</div>
+                <div class="item-desc">
+                    <strong>Project:</strong> <em>Hybrid Framework for Control-Based Continuation with Embedded Local System Identification.</em><br>
+                    Developing a real-time, data-driven methodology for experimentally tracking and analyzing complex bifurcations. Supported by €215,400 project funding by EU MSCA Co-Fund and Magyar Tudományos Akadémia.
                 </div>
             </div>
-            <div class="entry">
-                <div class="date-column">June, 2024 - Jan, 2026 [cite: 83, 84]</div>
-                <div class="details-column">
-                    <strong>Institute Post Doc Fellow [cite: 85]</strong><br>
-                    <span class="institution">Indian Institute of Technology, Bhubaneswar [cite: 85]</span>
-                    <div class="highlight">Energy harvesting from fluid-structure interaction. [cite: 85]</div>
+
+            <div class="item">
+                <div class="item-header">
+                    <div class="item-title">Institute Post Doc Fellow</div>
+                    <div class="item-date">June 2024 - Jan 2026</div>
+                </div>
+                <div class="item-subtitle">Indian Institute of Technology, Bhubaneswar</div>
+                <div class="item-desc">
+                    <strong>Project:</strong> <em>Energy harvesting from fluid-structure interaction.</em><br>
+                    Broadened energy harvesting bandwidth through fluid-sloshing-augmented dynamics experimentally. Numerically investigated vortex-induced vibration of a cylinder under internal resonance.
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="item-header">
+                    <div class="item-title">Research Associate</div>
+                    <div class="item-date">Aug 2023 - Nov 2023</div>
+                </div>
+                <div class="item-subtitle">Indian Institute of Technology, Delhi</div>
+                <div class="item-desc">
+                    Investigated friction-induced vibration in automotive disc brakes utilizing a two-degree-of-freedom beam model. Contributed to the development of a novel 4-for-1 twisting machine for yarn production.
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="item-header">
+                    <div class="item-title">Research Associate</div>
+                    <div class="item-date">May 2023 - July 2023</div>
+                </div>
+                <div class="item-subtitle">Indian Institute of Technology, Hyderabad</div>
+                <div class="item-desc">
+                    Studied non-smooth problems using Galerkin-Ivanov Transformation and Lyapunov-type exponent analysis.
                 </div>
             </div>
         </section>
 
-        <section>
-            <h2>Education [cite: 3]</h2>
-            <div class="entry">
-                <div class="date-column">2017 - 2023 [cite: 8]</div>
-                <div class="details-column">
-                    <strong>PhD, Mechanical Engineering [cite: 8]</strong><br>
-                    <span class="institution">Indian Institute of Engineering Science & Technology, Shibpur [cite: 8, 9]</span>
-                    <div class="highlight">Thesis: "Nonlinear Dynamics and Control of Mechanical Systems by Non-Resonant High Frequency Excitation." [cite: 10]</div>
+        <section id="education">
+            <h1 class="section-title">Education</h1>
+
+            <div class="item">
+                <div class="item-header">
+                    <div class="item-title">PhD, Mechanical Engineering</div>
+                    <div class="item-date">2017 - 2023</div>
+                </div>
+                <div class="item-subtitle">Indian Institute of Engineering Science & Technology, Shibpur</div>
+                <div class="item-desc">
+                    <strong>Thesis:</strong> <em>Nonlinear Dynamics and Control of Mechanical Systems by Non-Resonant High Frequency Excitation.</em><br>
+                    Advisor: Dr. Shyamal Chatterjee.
                 </div>
             </div>
-            <div class="entry">
-                <div class="date-column">2015 - 2017 [cite: 12]</div>
-                <div class="details-column">
-                    <strong>Master of Technology, Mechanical Engineering [cite: 12]</strong><br>
-                    <span class="institution">Indian Institute of Engineering Science & Technology, Shibpur [cite: 12, 13]</span>
+
+            <div class="item">
+                <div class="item-header">
+                    <div class="item-title">Master of Technology, Mechanical Engineering</div>
+                    <div class="item-date">2015 - 2017</div>
+                </div>
+                <div class="item-subtitle">Indian Institute of Engineering Science & Technology, Shibpur</div>
+                <div class="item-desc">
+                    Machine Design specialization (80%).<br>
+                    <strong>Thesis:</strong> <em>Effect of High-Frequency Excitation on Modified Rayleigh Oscillator.</em>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="item-header">
+                    <div class="item-title">Bachelor of Technology, Mechanical Engineering</div>
+                    <div class="item-date">2010 - 2014</div>
+                </div>
+                <div class="item-subtitle">Parala Maharaja Engineering College, Rourkela</div>
+                <div class="item-desc">
+                    Graduated with 8.49/10 CGPA.<br>
+                    <strong>Project:</strong> <em>Design of a Desiccant Dehumidifier</em>
                 </div>
             </div>
         </section>
 
-        <section>
-            <h2>Research Interests [cite: 23]</h2>
-            <p>Nonlinear Dynamics, Nonlinear vibration & Control, Friction-induced vibration, Fluid-structure interaction, MEMS, Vibrational mechanics, Parmetric amplification, Data-driven control. [cite: 24]</p>
+        <section id="publications">
+            <h1 class="section-title">Publications & Patents</h1>
+            
+            <h3>Journal Articles</h3>
+            <ul class="pub-list">
+                <li><strong>2025</strong> - P. K. Sahoo, S. Roychowdhury, V. Arumuru. <em>Fluid sloshing augmented parametric excitation for enhanced piezoelectric vibration energy harvesting.</em> Sensors and Actuators A: Physical (IF: 4.9).</li>
+                <li><strong>2024</strong> - P. K. Sahoo, S. Chatterjee. <em>Effects and applications of non-resonant high-frequency excitation on nonlinear systems: a literature review.</em> Nonlinear Dynamics (IF: 6).</li>
+                <li><strong>2023</strong> - P. K. Sahoo, S. Chatterjee. <em>Vibrational control and resonance of a nonlinear tilted cantilever beam under multi-harmonic low and high-frequency excitations.</em> CNSNS (IF: 3.8).</li>
+                <li><strong>2023</strong> - P. K. Sahoo, S. Chatterjee. <em>Nonlinear dynamics and control of galloping vibration under unsteady wind flow by high-frequency excitation.</em> CNSNS (IF: 3.8).</li>
+                <li><strong>2021</strong> - P. K. Sahoo, S. Chatterjee. <em>Nonlinear dynamics of vortex-induced vibration of a nonlinear beam under high-frequency excitation.</em> International Journal of Non-Linear Mechanics (IF: 3.2).</li>
+                <li><strong>2021</strong> - P. K. Sahoo, S. Chatterjee. <em>High-frequency vibrational control of principal parametric resonance of a nonlinear cantilever beam: Theory and experiment.</em> Journal of Sound and Vibration (IF: 4.9).</li>
+                <li><strong>2020</strong> - P. K. Sahoo, S. Chatterjee. <em>Effect of high-frequency excitation on friction induced vibration caused by the combined action of velocity-weakening and mode-coupling.</em> Journal of Vibration and Control (IF: 2.5).</li>
+            </ul>
+
+            <h3>Patents</h3>
+            <ul class="pub-list">
+                <li><strong>12/07/2024</strong> - Portable 5-Axis milling machine, Design No. 418378-001 (IN Patent)</li>
+            </ul>
+        </section>
+
+        <section id="teaching">
+            <h1 class="section-title">Teaching Experience</h1>
+            
+            <div class="item">
+                <div class="item-title">Indian Institute of Technology, Bhubaneswar</div>
+                <div class="item-subtitle">Teaching & Lab Assistant</div>
+                <div class="item-desc">Assisted in Industrial Vibration and Measurement (PG), Fluid Dynamics Lab (UG), Stress Measurement (PG), and Intro to Research and Entrepreneurship (PhD).</div>
+            </div>
+
+            <div class="item">
+                <div class="item-title">Parala Maharaja Engineering College, Berhampur</div>
+                <div class="item-subtitle">Assistant Professor (Contractual) | Feb 2024 - May 2024</div>
+                <div class="item-desc">Taught Design of Machine Components (UG), Smart and Composite Materials (UG), and Experimental Stress Analysis (PG).</div>
+            </div>
+
+            <div class="item">
+                <div class="item-title">IIEST, Shibpur</div>
+                <div class="item-subtitle">Teaching & Lab Assistant</div>
+                <div class="item-desc">Assisted in Basics of Machine Design Sessional, Numerical Methods in Engineering, and Theory of Mechanical Vibration.</div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h1 class="section-title">Skills & Interests</h1>
+
+            <div class="grid-2">
+                <div>
+                    <h3>Technical Skills</h3>
+                    <p><strong>Software:</strong> Matlab, Maple, Python, Julia, Oscill8, AUTOCAD, LABVIEW, Simulink.</p>
+                    <p><strong>Hardware:</strong> NI DAQ, Vibration Shaker, Amplifier, Signal Generator, Laser displacement sensor, Accelerometers.</p>
+                    <p><strong>Graphics:</strong> Origin Pro, Grapher, Matplotlib, Scimago Graphica, Inkscape.</p>
+                </div>
+                <div>
+                    <h3>Languages & Interests</h3>
+                    <p><strong>Languages:</strong> Odia (Native), Hindi, English</p>
+                    <p><strong>Interests:</strong> Sports, Photography, Dancing, Cooking, and Reading (particularly enjoying Odia literature, poetry, and translated works).</p>
+                </div>
+            </div>
         </section>
 
     </div>
