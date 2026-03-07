@@ -3,112 +3,226 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Pradyumna Kumar Sahoo - Academic Portfolio</title>
+    <title>Dr. Pradyumna Kumar Sahoo | Academic Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
-        body { 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            line-height: 1.6; 
-            color: #333; 
-            max-width: 850px; 
-            margin: 0 auto; 
-            padding: 30px; 
-            background-color: #f9f9f9;
+        :root {
+            --primary-color: #1a365d; /* Deep Navy */
+            --accent-color: #d69e2e; /* Professional Gold */
+            --bg-color: #f4f7f6;
+            --text-color: #333333;
+            --card-bg: #ffffff;
         }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header / Hero Section */
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 5px solid var(--accent-color);
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 4px solid var(--accent-color);
+            object-fit: cover;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8em;
+            margin: 0 0 10px 0;
+            letter-spacing: 1px;
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            font-weight: 300;
+            color: #e2e8f0;
+            margin-bottom: 20px;
+        }
+
+        .contact-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 500;
+        }
+
+        .contact-info a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        /* Main Content Container */
         .container {
-            background-color: #ffffff;
-            padding: 40px;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* Section Styling */
+        section {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 35px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease;
+        }
+
+        section:hover {
+            transform: translateY(-2px);
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 10px;
+            margin-top: 0;
+            display: inline-block;
+        }
+
+        /* Entry Layout (Education/Experience) */
+        .entry {
+            display: flex;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .entry:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .date-column {
+            flex: 0 0 160px;
+            font-weight: 500;
+            color: var(--primary-color);
+        }
+
+        .details-column {
+            flex: 1;
+        }
+
+        .institution {
+            font-weight: 500;
+            color: #555;
+            font-size: 0.95em;
+        }
+
+        .highlight {
+            font-style: italic;
+            color: #666;
+            margin-top: 8px;
+            font-size: 0.9em;
+            background: #f8fafc;
+            padding: 10px;
+            border-left: 3px solid var(--accent-color);
+        }
+
+        /* Featured Image in Content */
+        .featured-research-img {
+            width: 100%;
+            height: auto;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            margin-top: 15px;
+            border: 1px solid #ddd;
         }
-        header { 
-            text-align: center; 
-            border-bottom: 2px solid #2c3e50; 
-            padding-bottom: 20px; 
-            margin-bottom: 30px; 
-        }
-        h1 { color: #2c3e50; margin-bottom: 5px; font-size: 2.2em; }
-        .contact { font-size: 0.95em; color: #555; }
-        .contact a { color: #2980b9; text-decoration: none; }
-        .contact a:hover { text-decoration: underline; }
-        h2 { 
-            color: #2980b9; 
-            border-bottom: 1px solid #eee; 
-            padding-bottom: 8px; 
-            margin-top: 30px; 
-        }
-        .entry { margin-bottom: 20px; }
-        .date { font-weight: bold; color: #2c3e50; display: inline-block; width: 140px; }
-        .details { display: inline-block; vertical-align: top; width: calc(100% - 150px); }
-        .thesis { font-style: italic; color: #555; margin-top: 5px; display: block; }
     </style>
 </head>
 <body>
 
-<div class="container">
     <header>
+        <img src="https://via.placeholder.com/180x180.png?text=Profile+Photo" alt="Dr. Pradyumna Kumar Sahoo" class="profile-img">
+        
         <h1>Dr. PRADYUMNA KUMAR SAHOO [cite: 1]</h1>
-        <div class="contact">
-            <span>Sri Hari Nagar 13th lane, Brahmapur Odisha-760010 [cite: 4]</span><br>
-            <a href="mailto:pradyumna1993@yahoo.com">pradyumna1993@yahoo.com [cite: 7]</a> | <span>(+91) 8240363609 [cite: 5]</span>
+        <div class="subtitle">Postdoctoral Researcher | Mechanical Engineering & Nonlinear Dynamics</div>
+        
+        <div class="contact-info">
+            <span>Sri Hari Nagar 13th lane, Brahmapur Odisha-760010 [cite: 4]</span><br><br>
+            <a href="mailto:pradyumna1993@yahoo.com">pradyumna1993@yahoo.com [cite: 7]</a> | 
+            <a href="tel:+918240363609">(+91) 8240363609 [cite: 5]</a>
         </div>
     </header>
 
-    <section>
-        <h2>Post PhD Research Experience [cite: 71]</h2>
-        <div class="entry">
-            <span class="date">Feb, 2026 - Present [cite: 68, 69]</span>
-            <div class="details">
-                <strong>Momentum Marie Skłodowska-Curie Actions Post Doc Fellow [cite: 72]</strong><br>
-                Budapest University of Technology and Economics, Budapest [cite: 72]<br>
-                <em>Hybrid Framework for Control-Based Continuation with Embedded Local System Identification[cite: 73].</em>
+    <div class="container">
+        
+        <section>
+            <h2>Current Projects & Focus</h2>
+            <div class="entry">
+                <div class="details-column">
+                    <strong>Newton International Fellowship Proposal</strong>
+                    <div class="highlight">
+                        Currently developing a comprehensive research proposal focusing on the dynamics and applications of NV center diamond MEMS.
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="entry">
-            <span class="date">June, 2024 - Jan, 2026 [cite: 83, 84]</span>
-            <div class="details">
-                <strong>Institute Post Doc Fellow [cite: 85]</strong><br>
-                Indian Institute of Technology, Bhubaneswar [cite: 85]<br>
-                <em>Energy harvesting from fluid-structure interaction[cite: 85].</em>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section>
-        <h2>Education [cite: 3]</h2>
-        <div class="entry">
-            <span class="date">2017 - 2023 [cite: 8]</span>
-            <div class="details">
-                <strong>PhD, Mechanical Engineering [cite: 8]</strong><br>
-                Indian Institute of Engineering Science & Technology, Shibpur [cite: 8, 9]<br>
-                <span class="thesis">Thesis: "Nonlinear Dynamics and Control of Mechanical Systems by Non-Resonant High Frequency Excitation." [cite: 10]</span>
+        <section>
+            <h2>Post PhD Research Experience [cite: 71]</h2>
+            <div class="entry">
+                <div class="date-column">Feb, 2026 - Present [cite: 68, 69]</div>
+                <div class="details-column">
+                    <strong>Momentum Marie Skłodowska-Curie Actions Post Doc Fellow [cite: 72]</strong><br>
+                    <span class="institution">Budapest University of Technology and Economics, Budapest [cite: 72]</span>
+                    <div class="highlight">Hybrid Framework for Control-Based Continuation with Embedded Local System Identification. [cite: 73]</div>
+                    <img src="https://via.placeholder.com/800x300.png?text=Research+Diagram+or+Lab+Photo" alt="Research Diagram" class="featured-research-img">
+                </div>
             </div>
-        </div>
-        <div class="entry">
-            <span class="date">2015 - 2017 [cite: 12]</span>
-            <div class="details">
-                <strong>Master of Technology, Mechanical Engineering [cite: 12]</strong><br>
-                Indian Institute of Engineering Science & Technology, Shibpur [cite: 12, 13]
+            <div class="entry">
+                <div class="date-column">June, 2024 - Jan, 2026 [cite: 83, 84]</div>
+                <div class="details-column">
+                    <strong>Institute Post Doc Fellow [cite: 85]</strong><br>
+                    <span class="institution">Indian Institute of Technology, Bhubaneswar [cite: 85]</span>
+                    <div class="highlight">Energy harvesting from fluid-structure interaction. [cite: 85]</div>
+                </div>
             </div>
-        </div>
-        <div class="entry">
-            <span class="date">2010 - 2014 [cite: 15]</span>
-            <div class="details">
-                <strong>Bachelor of Technology, Mechanical Engineering [cite: 15]</strong><br>
-                Parala Maharaja Engineering College [cite: 15]
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section>
-        <h2>Research Interests [cite: 23]</h2>
-        <p>Nonlinear Dynamics, Nonlinear vibration & Control, Friction-induced vibration, Fluid-structure interaction, MEMS, Vibrational mechanics, Parmetric amplification, Data-driven control[cite: 24].</p>
-    </section>
+        <section>
+            <h2>Education [cite: 3]</h2>
+            <div class="entry">
+                <div class="date-column">2017 - 2023 [cite: 8]</div>
+                <div class="details-column">
+                    <strong>PhD, Mechanical Engineering [cite: 8]</strong><br>
+                    <span class="institution">Indian Institute of Engineering Science & Technology, Shibpur [cite: 8, 9]</span>
+                    <div class="highlight">Thesis: "Nonlinear Dynamics and Control of Mechanical Systems by Non-Resonant High Frequency Excitation." [cite: 10]</div>
+                </div>
+            </div>
+            <div class="entry">
+                <div class="date-column">2015 - 2017 [cite: 12]</div>
+                <div class="details-column">
+                    <strong>Master of Technology, Mechanical Engineering [cite: 12]</strong><br>
+                    <span class="institution">Indian Institute of Engineering Science & Technology, Shibpur [cite: 12, 13]</span>
+                </div>
+            </div>
+        </section>
 
-    <section>
-        <h2>Technical Skills [cite: 133]</h2>
-        <p><strong>Software:</strong> Matlab, Maple, Python, Julia, Oscill8, AUTOCAD, LABVIEW, Simulink, FFT Analyzer[cite: 134].</p>
-    </section>
-</div>
+        <section>
+            <h2>Research Interests [cite: 23]</h2>
+            <p>Nonlinear Dynamics, Nonlinear vibration & Control, Friction-induced vibration, Fluid-structure interaction, MEMS, Vibrational mechanics, Parmetric amplification, Data-driven control. [cite: 24]</p>
+        </section>
+
+    </div>
 
 </body>
 </html>
