@@ -123,6 +123,25 @@
             display: inline-block;
         }
 
+        /* Institute Logo Layout */
+        .institute-container {
+            display: flex;
+            align-items: center; /* Centers the logo and text vertically */
+            gap: 12px; /* Controls the space between the logo and the name */
+            margin-bottom: 10px;
+        }
+
+        .institute-logo {
+            height: 35px; /* Adjust this number to make the logos larger or smaller */
+            width: auto;
+            object-fit: contain; /* Ensures the logo doesn't stretch */
+        }
+        
+        /* Remove bottom margin when inside the container to keep it neat */
+        .institute-container .item-subtitle {
+            margin-bottom: 0; 
+        }
+        
         /* Timeline / Item layout */
         .item {
             margin-bottom: 25px;
@@ -335,7 +354,10 @@
                     <div class="item-title">Momentum Marie Skłodowska-Curie Actions Post Doc Fellow</div>
                     <div class="item-date">Feb 2026 - Present</div>
                 </div>
+                <div class="institute-container">
+                <img src="BEM_logo.png" alt="BME Logo" class="institute-logo">
                 <div class="item-subtitle">Budapest University of Technology and Economics, Budapest</div>
+                </div>
                 <div class="item-desc">
                     <strong>Project:</strong> <em>Hybrid Framework for Control-Based Continuation with Embedded Local System Identification.</em><br>
                     Developing a real-time, data-driven methodology for experimentally tracking and analyzing complex bifurcations. Supported by €215,400 project funding by EU MSCA Co-Fund and Magyar Tudományos Akadémia.
